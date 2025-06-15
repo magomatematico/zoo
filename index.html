@@ -123,8 +123,8 @@
       gap: 4px;
     }
     footer button {
-      background: transparent;
-      border: none;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.3);
       font-size: 14px;
       font-weight: 500;
       color: #fff;
@@ -142,6 +142,10 @@
       white-space: nowrap;
       overflow: hidden;
     }
+    footer button.selected {
+      background: rgba(255, 255, 255, 0.3);
+      font-weight: 600;
+    }
     footer button img {
       height: 28px;
       width: 28px;
@@ -150,7 +154,7 @@
       font-size: 28px;
     }
     footer button:hover {
-      background: rgba(255,0,0,0.1);
+      background: rgba(255, 255, 255, 0.2);
       box-shadow: 0 2px 8px rgba(0,0,0,0.2);
     }
     footer button:active {
@@ -327,7 +331,7 @@
         font-size: 16px;
       }
       #main-content {
-        padding-bottom: 110px;
+        padding-bottom: 100px;
       }
       #palpites-container, #suporte {
         padding: 12px;
@@ -346,11 +350,11 @@
         padding: 10px;
       }
       footer {
-        padding: 8px;
-        height: 100px;
+        padding: 6px;
+        height: 90px;
       }
       footer .row {
-        height: 44px;
+        height: 40px;
       }
       footer button {
         font-size: 12px;
@@ -364,7 +368,7 @@
         font-size: 24px;
       }
       iframe {
-        height: calc(100vh - 150px);
+        height: calc(100vh - 140px);
       }
       table {
         font-size: 13px;
@@ -455,7 +459,7 @@
   </div>
   <footer>
     <div class="row">
-      <button onclick="mostrar('pavao')">
+      <button onclick="mostrar('pavao')" class="selected">
         <img src="pavao.png" alt="Pavão de Ouro">
         Pavão de Ouro
       </button>
@@ -651,6 +655,14 @@
 
           palpites.classList.toggle('visible', id === 'palpites');
           suporteContent.classList.toggle('visible', id === 'suporte');
+
+          // Atualizar estado dos botões do rodapé
+          document.querySelectorAll('footer button').forEach(button => {
+            button.classList.remove('selected');
+            if (button.getAttribute('onclick') === `mostrar('${id}')`) {
+              button.classList.add('selected');
+            }
+          });
 
           if (id === 'palpites') {
             const animalSelect = document.getElementById('animalSelect');
