@@ -115,6 +115,14 @@
       z-index: 10;
       gap: 6px;
     }
+    .footer-bar {
+      background: linear-gradient(135deg, #7bbdff, #1a3c5e);
+      height: 10px;
+      width: 100%;
+      position: fixed;
+      bottom: 0;
+      z-index: 9;
+    }
     footer .row {
       display: flex;
       justify-content: space-between;
@@ -353,6 +361,9 @@
         padding: 6px;
         height: 90px;
       }
+      .footer-bar {
+        height: 10px;
+      }
       footer .row {
         height: 40px;
       }
@@ -503,6 +514,7 @@
       </button>
     </div>
   </footer>
+  <div class="footer-bar"></div>
 
   <script>
     try {
