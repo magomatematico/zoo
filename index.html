@@ -69,7 +69,7 @@
     #main-content {
       flex: 1;
       overflow-y: auto;
-      padding-bottom: 120px;
+      padding-bottom: 140px;
       margin-top: 50px;
     }
     #pavao, #tiger, #golden, #brazz, #aguia, #lucky, #vai, #brasileirinha, #palpites-container, #suporte {
@@ -108,7 +108,7 @@
       padding: 10px;
       border-top: 2px solid #e0e6ec;
       position: fixed;
-      bottom: 0;
+      bottom: 30px;
       width: 100%;
       height: 110px;
       box-shadow: 0 -4px 12px rgba(0,0,0,0.1);
@@ -117,10 +117,10 @@
     }
     .footer-bar {
       background: linear-gradient(135deg, #7bbdff, #1a3c5e);
-      height: 10px;
+      height: 20px;
       width: 100%;
       position: fixed;
-      bottom: 0;
+      bottom: -30px;
       z-index: 9;
     }
     footer .row {
@@ -339,7 +339,7 @@
         font-size: 16px;
       }
       #main-content {
-        padding-bottom: 100px;
+        padding-bottom: 120px;
       }
       #palpites-container, #suporte {
         padding: 12px;
@@ -359,10 +359,12 @@
       }
       footer {
         padding: 6px;
-        height: 90px;
+        height: 100px;
+        bottom: 10px;
       }
       .footer-bar {
-        height: 10px;
+        height: 20px;
+        bottom: -20px;
       }
       footer .row {
         height: 40px;
@@ -480,7 +482,7 @@
       </button>
       <button onclick="mostrar('golden')">
         <img src="golden.png" alt="GoldenLoterias">
-        GoldenLoterias
+        Golden
       </button>
       <button onclick="mostrar('brazz')">
         <img src="brazz.png" alt="Brazz Club">
@@ -502,7 +504,7 @@
       </button>
       <button onclick="mostrar('brasileirinha')">
         <img src="brasileirinha.png" alt="Banca Brasileira">
-        Banca Brasileira
+        Brasileira
       </button>
       <button onclick="mostrar('palpites')">
         <i class="fas fa-chart-line"></i>
