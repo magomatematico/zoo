@@ -41,7 +41,7 @@
       overflow-x: hidden;
     }
     header {
-      background: linear-gradient(135deg, #7fbef1, #1a3c5e);
+      background: linear-gradient(135deg, #000911, #1a3c5e);
       display: flex;
       align-items: center;
       padding: 10px 20px;
@@ -105,7 +105,7 @@
       border-radius: 10px;
     }
     footer {
-      background: linear-gradient(135deg, #7bbdff, #1a3c5e);
+      background: linear-gradient(135deg, #000911, #1a3c5e);
       display: flex;
       flex-direction: column;
       padding: 10px;
@@ -452,23 +452,7 @@
       </div>
     </div>
     <div id="suporte" class="hidden">
-      <div id="suporte-content">
-        <div class="section">
-          <h2>Suporte</h2>
-          <div class="suporte-content">
-            <p>Estamos aqui para ajudar! Entre em contato com nossa equipe de suporte:</p>
-            <ul>
-              <li>WhatsApp: <a href="https://wa.me/5583991177252">+55 83 99117-7252</a></li>
-              <li>Horário de atendimento: 24/7</li>
-            </ul>
-            <h3>Políticas e Privacidade</h3>
-            <p><strong>Política de Privacidade</strong></p>
-            <p>No ZooGames, sua privacidade é nossa prioridade. Coletamos apenas dados essenciais para nossos serviços, como nome e telefone, protegidos com segurança avançada. Não compartilhamos informações com terceiros, salvo por obrigação legal ou com seu consentimento.</p>
-            <p><strong>Termos de Uso</strong></p>
-            <p>Ao usar o ZooGames, você concorda com nossas regras. O serviço é para maiores de 18 anos, e tentativas de fraude resultam em suspensão. Bônus seguem regras promocionais e não são transferíveis.</p>
-          </div>
-        </div>
-      </div>
+      <div id="suporte-content"></div>
     </div>
   </div>
   <footer>
@@ -657,6 +641,11 @@
             return;
           }
 
+          if (id === 'suporte') {
+            window.open('https://wa.me/5583991177252?text=Ol%C3%A1%2C%20Suporte.%20Preciso%20de%20ajuda%21', '_blank');
+            return;
+          }
+
           pavao.style.display = id === 'pavao' ? 'block' : 'none';
           tiger.style.display = id === 'tiger' ? 'block' : 'none';
           golden.style.display = id === 'golden' ? 'block' : 'none';
@@ -666,10 +655,9 @@
           vai.style.display = id === 'vai' ? 'block' : 'none';
           brasileirinha.style.display = id === 'brasileirinha' ? 'block' : 'none';
           palpitesContainer.style.display = id === 'palpites' ? 'block' : 'none';
-          suporte.style.display = id === 'suporte' ? 'block' : 'none';
+          suporte.style.display = 'none';
 
           palpites.classList.toggle('visible', id === 'palpites');
-          suporteContent.classList.toggle('visible', id === 'suporte');
 
           // Atualizar estado dos botões do rodapé
           document.querySelectorAll('footer button').forEach(button => {
